@@ -1,8 +1,7 @@
 """Re-makes Figures 1 to 5 from the CSV files in data/.
+Run it from anywhere: python scripts/make_figures.py
+The PNG files are saved in the figures/ folder."""
 
-Run it from anywhere:   python scripts/make_figures.py
-The PNG files are saved in the figures/ folder.
-"""
 import csv
 from pathlib import Path
 
@@ -55,7 +54,7 @@ def clean(ax):
         ax.spines[side].set_visible(False)
 
 
-# ---------- Figures 1 and 2: one bar per post ----------
+# Figures 1 and 2: one bar per post
 def bar_figure(column, xlabel, title, xmax, ticks, filename):
     fig, ax = plt.subplots(figsize=(10, 8.5))
     ys = list(range(len(posts)))
@@ -63,7 +62,7 @@ def bar_figure(column, xlabel, title, xmax, ticks, filename):
     colors = [COLORS[p["community_type"]] for p in posts]
     ax.barh(ys, [min(v, xmax) for v in values], color=colors, height=0.72)
     for y, v in zip(ys, values):
-        if v > xmax:  # bar is cut off: white slashes and the real value
+        if v > xmax:  # the bar is cut off
             for dx in (1.6, 0.9):
                 ax.plot([xmax - dx, xmax - dx + 0.5], [y + 0.3, y - 0.3], color="white", lw=2)
             ax.text(xmax + 0.3, y, f"{v:.1f} (cut off)", va="center", fontsize=8)
@@ -86,7 +85,7 @@ def bar_figure(column, xlabel, title, xmax, ticks, filename):
     plt.close(fig)
 
 
-# ---------- Figure 3: the r/ClashRoyale post ----------
+# Figure 3: The r/ClashRoyale post
 def figure3():
     post, sub = "Clash Royale audio meme", "r/ClashRoyale"
     views, ups, coms = (series(post, sub, m) for m in ("views", "upvotes", "comments"))
@@ -118,7 +117,7 @@ def figure3():
     plt.close(fig)
 
 
-# ---------- Figure 4: views of 11 posts ----------
+# Figure 4: views of 11 posts
 FIG4 = [
     ("Childhood Pokémon drawings", "r/pokemon", "#e4572e"),
     ("Mini Pekka sketch", "r/NepalSocial", "#17a398"),
@@ -156,7 +155,7 @@ def figure4():
     plt.close(fig)
 
 
-# ---------- Figure 5: the Batista sketch through 5 days ----------
+# Figure 5:The Batista sketch through 5 days
 def figure5():
     post, sub = "Angel Batista sketch", "r/Dexter"
     views = series(post, sub, "views")
