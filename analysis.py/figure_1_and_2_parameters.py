@@ -1,7 +1,7 @@
 import pandas as pd
 
 #Loading the data 
-df = pd.read_csv('dataset.csv')
+df = pd.read_csv('data/posts_24h.csv')
 
 print("=== REDDIT ENGAGEMENT DATA ANALYSIS ===")
 print(f"Total posts analyzed: {len(df)}")
