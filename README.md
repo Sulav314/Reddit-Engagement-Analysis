@@ -1,9 +1,9 @@
 # Reddit Engagement Analysis
-Data analysis of 20+ Reddit posts on 20+ subreddits
+Data analysis of 20+ Reddit across 20+ subreddits through collected data over 10 months.
 
 ## Overview 
 
-This project examines patterns of engagement across Reddit posts using publicly observable measures including views, upvotes, and comments. The dataset was collected over approximately ten months and contains observations from 20+ subreddit communities. This includes the number of views, upvotes and comments at different time intervals, i.e., when the post is 1 hour old, 10 minutes old, 1 day old, etc.
+This project examines patterns of engagement across Reddit posts using publicly observable measures including views, upvotes, and comments. The dataset was collected over approximately ten months and contains observations from 20+ subreddit communities. This includes the number of views, upvotes and comments at different time intervals, e.g., when the post is 1 hour old, 10 minutes old, 1 day old, etc.
 
 ## Research Questions
 
