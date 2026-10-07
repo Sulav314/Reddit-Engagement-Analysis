@@ -1,6 +1,6 @@
 """Re-makes Figures 1 to 5 from the CSV files in data/.
-Run it from anywhere: python scripts/make_figures.py
-The PNG files are saved in the figures/ folder."""
+Run it from anywhere: analysis.py/all_figures_data_to_figure
+The files are saved in the figures/ folder."""
 
 import csv
 from pathlib import Path
